@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>vicroads-proto</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+    table {
+      width: 40%;
+    }
+
+    td {
+      width: 20%;
+      position: relative;
+    }
+
+    td:after {
+      content: '';
+      display: block;
+      margin-top: 100%;
+    }
+
+    td .content {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: gold;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+  <script>
+    function clickMe(x,y) {
+      console.info('hello',x,y);
+
+
+      for (i = 0; i <4; i++) {
+
+        if(i == x ) continue;
+
+        if($('.content').eq(i*4+y).css('background-color').includes('255')){
+          $('.content').eq(i*4+y).css('background','black');
+        }else{
+          $('.content').eq(i*4+y).css('background','white');
+        }
+
+      }
+
+
+      for (i = 0; i <4; i++) {
+        if($('.content').eq(x*4+i).css('background-color').includes('255')){
+          $('.content').eq(x*4+i).css('background','black');
+        }else{
+          $('.content').eq(x*4+i).css('background','white');
+        }
+      }
+
+    }
+
+
+
+    function initialise() {
+      $('.content').each(function(index){
+
+        var color = Math.floor(Math.random() * 2) == 1 ? 'white' : 'black';
+        $(this).css('background',color);
+
+      });
+    }
+
+    $(document).ready(function(){
+
+      initialise();
+
+    });
+
+
+  </script>
+</head>
+<body style="background: gold">
+
+
+<table>
+  <tr>
+    <td>
+      <div class="content" onclick="clickMe(0,0)"></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(0,1)"></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(0,2)" ></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(0,3)" ></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="content" onclick="clickMe(1,0)"></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(1,1)"></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(1,2)"></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(1,3)"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="content" onclick="clickMe(2,0)"></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(2,1)"></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(2,2)"></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(2,3)"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="content" onclick="clickMe(3,0)"></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(3,1)"></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(3,2)"></div>
+    </td>
+    <td>
+      <div class="content" onclick="clickMe(3,3)"></div>
+    </td>
+  </tr>
+
+
+  <table>
+
+
+</body>
+</html>
