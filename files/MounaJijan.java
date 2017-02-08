@@ -3,14 +3,15 @@ import java.io.*;
 import java.util.Scanner;
 
 public class MounaJijan {
+	private static Scanner scanner;
+
 	public static void main(String args[]) {
 		try {
 			// Reading file and getting no. of files to be generated
 			String inputfile="D:\\NB-Bluage-II\\PowerBuilder2Spring4Jdbc\\ws2\\camelCase\\AFI.SHPMT.001630941.xml";     
-			double nol = 2000.0; // No. of lines to be split and saved in each
-									// output file.
+			// output file.
 			File file = new File(inputfile);
-			Scanner scanner = new Scanner(file);
+			scanner = new Scanner(file);
 			int count = 1;
 			
 			
