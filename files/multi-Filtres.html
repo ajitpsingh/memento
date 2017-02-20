@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".multiFilter").change(function () {
+                var filter = {};
+                filter.filter0 = $('#filter0').val();
+                filter.filter1 = $('#filter1').val();
+                filter.filter2 = $('#filter2').val();
+                filter.filter3 = $('#filter3').val();
+                filter.filter4 = $('#filter4').val();
+
+                console.info(filter)
+                $("#jsonShow").text(JSON.stringify(filter));
+            });
+
+
+
+            $(".click").click(function () {
+                var filterResp =
+                    {"filter0":"xxxxx","filter1":"option2","filter2":"hello2","filter3":"red","filter4":"box"};
+
+                $('#filter0').val(filterResp.filter0);
+                $('#filter1').val(filterResp.filter1);
+                $('#filter2').val(filterResp.filter2);
+                $('#filter3').val(filterResp.filter3);
+                $('#filter4').val(filterResp.filter4);
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+
+
+<form>
+
+    <p id="jsonShow"></p>
+
+
+
+    <input class="multiFilter" id="filter0" type="text" value="Field 1">
+
+    </br>
+    <select class="multiFilter" id="filter1">
+        <option value="option1"  >Option 1</option>
+        <option value="option2" >Option 2</option>
+    </select>
+
+    </br>
+    <select class="multiFilter" id="filter2">
+        <option value="hello1" >Hello 1</option>
+        <option value="hello2">Hello 2</option>
+        <option value="hello3">Hello 3</option>
+    </select>
+    </br>
+
+    <select class="multiFilter" id="filter3">
+        <option value="green">green</option>
+        <option value="red">red</option>
+        <option value="yellow">yellow</option>
+    </select>
+    </br>
+
+    <select class="multiFilter" id="filter4">
+        <option value="tenis" >tenis</option>
+        <option value="foot">foot</option>
+        <option value="box">box</option>
+    </select>
+
+
+</form>
+
+
+</br></br></br></br></br>
+</br></br>
+supposant mtn que c'est la reponse de serveur est :
+</br></br>
+{"filter0":"xxxxx","filter1":"option2","filter2":"hello2","filter3":"red","filter4":"box"}
+</br></br>
+<input type="button" class="click" value="simuler reponse serveur">
+
+</body>
+</html>
