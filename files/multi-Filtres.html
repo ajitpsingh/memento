@@ -6,6 +6,10 @@
         $(document).ready(function () {
 
             $(".multiFilter").change(function () {
+
+                console.info("on Change");
+
+
                 var filter = {};
                 filter.filter0 = $('#filter0').val();
                 filter.filter1 = $('#filter1').val();
